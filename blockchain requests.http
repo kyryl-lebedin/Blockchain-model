@@ -1,0 +1,8 @@
+# highlight and ctrl + alt + r to run the request
+# Rest Client extension for VS Code
+
+GET http://127.0.0.1:5000/mine_block
+
+GET http://127.0.0.1:5000/is_valid
+
+GET http://127.0.0.1:5000/get_chain
