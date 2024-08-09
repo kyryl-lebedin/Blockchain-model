@@ -1,14 +1,46 @@
 # highlight and ctrl + alt + r to run the request
 # Rest Client extension for VS Code
 
+# general requests for a node
+
+#mine block on the node
 GET http://127.0.0.1:5000/mine_block
 
+# check if all blocks on node chain are valid
 GET http://127.0.0.1:5000/is_valid
 
+# output node chain
 GET http://127.0.0.1:5000/get_chain
 
+# replace node chain with the most up to date chain on network
+GET http://127.0.0.1:5000/replace_chain
+
+# connect node to other nodes
+POST http://127.0.0.1:5000/connect_node
+{
+    "nodes": [
+        "",
+        ""
+    ]
+}
+
+# add a transaction to the node
+POST http://127.0.0.1:5001/add_transaction
+content-type: application/json
+
+{
+    "sender": "",
+    "receiver": "",
+    "amount": 
+}
 
 
+
+
+
+
+
+# testing requsts
 
 # node 5001
 GET http://127.0.0.1:5001/get_chain
