@@ -104,7 +104,7 @@ def mine_block():
     previous_hash = blockchain.hash(previous_block)
 
     # in out bc system automatically allocates 1 coin to the miner
-    blockchain.add_transaction(sender=node_adress, receiver='Miner', amount=1) 
+    blockchain.add_transaction(sender=node_adress, receiver='User1', amount=1) 
 
     # after block is mined, we create a new block
     block = blockchain.create_block(proof, previous_hash)
@@ -158,7 +158,6 @@ def add_transaction():
 # post file with adresses {nodes: ['http://, ...]}
 # synchronize with all the nodes in blockchain (all the nodes that stated in json)
 # this allows to imitate other nodes on network
-# adds all the others nodes on the network to local server
 @app.route('/connect_node', methods=['POST'])
 def connect_node():
     json = request.get_json() # json file with all the nodes
@@ -183,6 +182,6 @@ def replace_chain():
                     'actual_chain': blockchain.chain}
     return jsonify(response), 200
 
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=5001)
 
 
